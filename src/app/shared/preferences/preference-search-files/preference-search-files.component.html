@@ -1,0 +1,65 @@
+<form class="m-t-10 position-relative">
+  <div class="flex align-items-center bg-gray p-8 border-radius-15 m-b-10">
+    <mat-icon class="m-r-5">info</mat-icon>
+    <span>
+      La búsqueda de archivos tendrá como prioridad las opciones seleccionadas
+    </span>
+  </div>
+  <div class="m-b-20">
+    <div class="f-bold">Facultad</div>
+    <div>Facultad de Ingeniería de Sistemas e Informática</div>
+  </div>
+
+  <div class="m-b-10">
+    <div class="m-r-10 f-bold">Escuela Profesional</div>
+
+    <div>
+      <mat-form-field
+        class="w-100percent"
+        appearance="legacy"
+        floatLabel="never"
+      >
+        <mat-label>Seleccionar EAP</mat-label>
+        <mat-select (selectionChange)="changeSchool($event.value)">
+          <mat-option *ngFor="let school of schoolList" [value]="school">
+            {{ school.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="m-b-20">
+    <div class="f-bold">Plan de Estudios:</div>
+
+    <div>
+      <section>
+        <div *ngFor="let plan of planList">
+          <mat-checkbox (change)="changePlan(plan, $event.checked)">{{
+            plan.name
+          }}</mat-checkbox>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="m-r-10 f-bold">Ciclo académico:</div>
+
+    <div>
+      <section class="overflow-y h-110px">
+        <div *ngFor="let cycle of cycleList">
+          <mat-checkbox (change)="changeCycle(cycle, $event.checked)">{{
+            cycle.name
+          }}</mat-checkbox>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="float-right">
+    <button mat-button color="secondary" (click)="save()">
+      <mat-icon>save</mat-icon>Guardar cambios
+    </button>
+  </div>
+</form>

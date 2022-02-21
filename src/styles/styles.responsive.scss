@@ -1,0 +1,53 @@
+@media (max-width: 768px) {
+    .responsive-none {
+        display: none !important;
+    }
+
+    .responsive-max-width {
+        width: 100% !important;
+        margin: 0 !important;
+        // padding: 0 !important;
+    }
+
+    .responsive-max-width-bottom {
+        width: 100% !important;
+        position: fixed !important;
+        bottom: 0px !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-top-left-radius: 50px !important;
+        border-top-right-radius: 50px !important;
+    }
+
+    .responsive-inline {
+        display: inline !important;
+    }
+
+    .response-relative {
+        position: relative !important;
+    }
+
+    .response-transform {
+        top: 0;
+        left: 0;
+        -ms-transform: none;
+        transform: none;
+    }
+
+    .responsive-card {
+        width: 60%;
+        min-width: 60%;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .responsive-card {
+        width: 25%;
+        max-width: 25%;
+        min-width: 25%;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+}

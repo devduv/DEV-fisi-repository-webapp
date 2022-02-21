@@ -1,0 +1,37 @@
+<div class="m-t-10 center-vertically">
+  <div class="text-align-center p-t-10 f-45 m-15">
+    <!-- <div>
+      <img width="100" src="./assets/icons/logo.png" class="p-horizontal-10" />
+    </div> -->
+
+    <div>
+      <span class="f-bold fc-primary">FISI</span>
+      <span class="f-bold"> Repository</span>
+    </div>
+  </div>
+  <div class="text-align-center fc-gray p-15 f-18">
+    Obtén acceso a diferentes proyectos, clases y materiales académicos
+  </div>
+
+  <div
+    class="flex justify-content-center align-items-center text-align-center responsive-inline"
+  >
+    <div
+      class="p-25 cursor-pointer box-shawod-standar responsive-max-width w-50percent bg-primary"
+      (click)="access('/login')"
+    >
+      <div class="fc-white">Acceder como usuario</div>
+      <img class="w-120px" src="./assets/icons/user.png" />
+      <!--  <div class="f-20 m-5 fc-white">Iniciar sesión</div> -->
+    </div>
+
+    <div
+      class="p-25 cursor-pointer box-shawod-standar responsive-max-width w-50percent bg-secondary"
+      (click)="access('/app/home')"
+    >
+      <div class="fc-white">Acceder como invitado</div>
+      <img class="w-120px" src="./assets/icons/invited.png" />
+      <!--   -->
+    </div>
+  </div>
+</div>

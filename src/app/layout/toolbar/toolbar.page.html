@@ -1,0 +1,25 @@
+<div class="p-10 flex align-items-center box-shadow-bottom bg-white">
+  <div class="flex align-items-center">
+    <button mat-mini-fab color="default" class="m-r-5" (click)="showMenu()">
+      <mat-icon class="h-30px">menu</mat-icon>
+    </button>
+
+    <div class="f-20">
+      <span class="f-bold fc-primary">FISI</span>
+      <span class="f-bold"> Repository</span>
+    </div>
+  </div>
+
+  <div class="flex align-items-center flex-float-right">
+    <button
+      class="m-l-5 m-r-5"
+      mat-mini-fab
+      color="default"
+      matTooltip="Prefencias de usuario"
+      (click)="showPreferences()"
+    >
+      <mat-icon>tune</mat-icon>
+    </button>
+    <div class="w-40px h-40px bg-primary border-radius border-circle"></div>
+  </div>
+</div>

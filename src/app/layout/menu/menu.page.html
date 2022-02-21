@@ -1,0 +1,24 @@
+<div class="flex flex-vertical">
+  <div
+    matRipple
+    class="w-100percent m-vertical-10 p-15 cursor-pointer border-right-primary"
+    [ngClass]="menu.selected ? 'border-right-primary-set bg-gray' : ''"
+    matTooltip="{{showMenu ? '' : menu.name}}"
+    matTooltipPosition="right"
+    *ngFor="let menu of menuList"
+    (click)="goTo(menu)"
+  >
+    <div class="w-100percent">
+      <div class="flex align-items-center">
+        <mat-icon [ngClass]="showMenu ? 'm-r-10' : ''">{{menu.icon}}</mat-icon>
+        <div class="no-wrap" *ngIf="showMenu">{{menu.name}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="fc-gray f-13 text-align-center bottom-0 position-absolute w-100percent p-15"
+  >
+    {{ showMenu ? 'Team Fisi Repository' : 'TFR'}}
+  </div>
+</div>

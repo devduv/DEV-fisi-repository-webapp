@@ -1,0 +1,107 @@
+@import "./styles.font.scss";
+@import "./styles.color.scss";
+@import "./styles.flex.scss";
+@import "./styles.width.scss";
+@import "./styles.border.scss";
+@import "./styles.responsive.scss";
+@import "./styles.material.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Nunito", sans-serif !important;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.box-shawod-standar:hover {
+  box-shadow: 2px 3px 20px 1px rgb(0 0 0 / 75%);
+  transition: 0.3s;
+}
+
+.box-shadow {
+  box-shadow: 2px 3px 20px 1px rgb(0 0 0 / 75%);
+  transition: 0.3s;
+}
+
+.bg-primary {
+  background-color: $primary__color;
+}
+
+.bg-secondary {
+  background-color: $secondary__color;
+}
+
+.bg-gray {
+  background-color: #f7f7f7;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.translate {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.translate-2 {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+
+.no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}

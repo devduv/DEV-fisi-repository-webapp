@@ -1,0 +1,19 @@
+<div class="position-fixed w-100percent">
+  <app-toolbar
+    (showMenuEmmitter)="showMenuEmmitter()"
+    (showPreferencesEmmitter)="showPreferencesEmmitter()"
+  >
+  </app-toolbar>
+</div>
+
+<div class="flex p-t-60 height-100vh">
+  <div
+    class="m-15 border-radius-15 border-gray position-relative"
+    [ngClass]="showMenu ? 'w-200px translate-2' : 'w-56px translate'"
+  >
+    <app-menu [showMenu]="showMenu"></app-menu>
+  </div>
+  <div class="m-15 position-relative w-100percent">
+    <router-outlet></router-outlet>
+  </div>
+</div>

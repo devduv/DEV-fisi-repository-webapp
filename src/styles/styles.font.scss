@@ -1,0 +1,71 @@
+@import "styles.color.scss";
+
+$font-family: "Nunito";
+
+@font-face {
+  font-family: $font-family;
+  src: url("../assets/fonts/Nunito-Black.ttf") format("woff2"),
+    url("../assets/fonts/Nunito-Black.ttf") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url("../assets/fonts/Nunito-Regular.ttf") format("woff2"),
+    url("../assets/fonts/Nunito-Regular.ttf") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $font-family;
+  src: url("../assets/fonts/Nunito-Light.ttf") format("woff2"),
+    url("../assets/fonts/Nunito-Light.ttf") format("woff");
+  font-weight: lighter;
+}
+.fc-gray {
+  color: #858585;
+}
+
+.fc-primary {
+  color: $primary__color;
+}
+
+.fc-white {
+  color: white;
+}
+
+.f-bold {
+  font-weight: bold !important;
+}
+
+.f-13 {
+  font-size: 13px;
+}
+
+.f-14 {
+  font-size: 14px;
+}
+
+.f-15 {
+  font-size: 15px;
+}
+
+.f-16 {
+  font-size: 16px !important;
+}
+
+.f-18 {
+  font-size: 18px;
+}
+
+.f-20 {
+  font-size: 20px !important;
+}
+
+.f-25 {
+  font-size: 25px !important;
+}
+
+.f-45 {
+  font-size: 45px !important;
+}

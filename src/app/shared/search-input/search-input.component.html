@@ -1,0 +1,23 @@
+<div class="flex align-items-center">
+  <div class="p-8 border-radius-15 flex align-items-center justify-content-center bg-gray m-r-10">
+    <mat-icon>search</mat-icon>
+  </div>
+  <mat-form-field
+    class="w-100percent f-20"
+    appearance="legacy"
+    floatLabel="never"
+  >
+    <mat-label>Buscar archivos, proyectos, exámenes...</mat-label>
+    <input matInput type="text" [(ngModel)]="value" />
+
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="value = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
