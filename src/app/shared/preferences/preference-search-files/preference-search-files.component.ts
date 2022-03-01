@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { PreferencesService } from 'src/app/core/services/preferences.service';
+import { StudyPlansService } from 'src/app/core/services/study-plans.service';
 
 @Component({
   selector: 'app-preference-search-files',
@@ -13,7 +16,15 @@ export class PreferenceSearchFilesComponent implements OnInit {
 
   schoolSelected: any;
 
-  constructor() {}
+  public showErrorSchool: boolean;
+  public showErrorPlan: boolean;
+  public showErrorCycle: boolean;
+
+  constructor(
+    public dialogRef: MatDialogRef<PreferenceSearchFilesComponent>,
+    private studyPlansService: StudyPlansService,
+    private preferencesService: PreferencesService
+  ) {}
 
   ngOnInit(): void {
     this.buildSchoolList();
@@ -28,11 +39,14 @@ export class PreferenceSearchFilesComponent implements OnInit {
     );
   }
 
-  buildPlanList() {
-    this.planList.push(
+  async buildPlanList() {
+    this.planList = await this.studyPlansService.getPlansBySchool();
+    console.log(this.planList);
+    
+    /* this.planList.push(
       { id: '01', name: 'Plan 2014', selected: false },
       { id: '02', name: 'Plan 2018', selected: false }
-    );
+    ); */
   }
 
   buildCycleList() {
@@ -51,31 +65,45 @@ export class PreferenceSearchFilesComponent implements OnInit {
   }
 
   changeSchool(school: any) {
-    console.log(school);
-
     this.schoolSelected = school;
+    this.showErrorSchool = false;
   }
 
   changePlan(plan: any, checked: boolean) {
-    console.log(plan);
     plan.selected = checked;
+    this.showErrorPlan = false;
   }
 
   changeCycle(cycle: any, checked: boolean) {
-    console.log(cycle);
     cycle.selected = checked;
+    this.showErrorCycle = false;
   }
 
+  validationPreferences(plans: any[], cycles: any[]) {
+    if (!this.schoolSelected) {
+      this.showErrorSchool = true;
+    }
+
+    if (plans.length === 0) {
+      this.showErrorPlan = true;
+    }
+
+    if (cycles.length === 0) {
+      this.showErrorCycle = true;
+    }
+
+    return !this.showErrorSchool && !this.showErrorPlan && !this.showErrorCycle;
+  }
   save() {
-
-    let school = this.schoolSelected.id;
-
     let plans = this.planList.filter((p) => p.selected).map((p) => p.id);
 
     let cycles = this.cycleList.filter((c) => c.selected).map((c) => c.id);
 
-    localStorage.setItem('preferences-facultad', school);
-    localStorage.setItem('preferences-plans', plans.toString());
-    localStorage.setItem('preferences-cycles', cycles.toString());
+    if (this.validationPreferences(plans, cycles)) {
+      let school = this.schoolSelected.id;
+      this.preferencesService.savePreferences(school, plans, cycles);
+
+      this.dialogRef.close();
+    }
   }
 }

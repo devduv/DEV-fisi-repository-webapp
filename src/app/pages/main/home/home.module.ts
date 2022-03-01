@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { SearchInputModule } from 'src/app/shared/search-input/search-input.module';
 import { MatIconModule } from '@angular/material/icon';
+import { CourseListModule } from 'src/app/shared/course-list/course-list.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     HomePageRoutingModule,
     SearchInputModule,
-    MatIconModule
+    MatIconModule,
+    CourseListModule,
   ],
   declarations: [HomePage],
 })

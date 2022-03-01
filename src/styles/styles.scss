@@ -69,6 +69,10 @@ body {
   transition: 0.3s;
 }
 
+.box-shadow-light {
+  box-shadow: -1px 1px 8px 0px rgb(0 0 0 / 13%);
+}
+
 .bg-primary {
   background-color: $primary__color;
 }

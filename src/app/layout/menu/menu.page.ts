@@ -10,7 +10,7 @@ import { Menu } from 'src/app/core/models/menu.model';
 export class MenuPage implements OnInit {
   public menuList: Menu[] = [];
 
-  public menuSelected: boolean = false;
+  public menuSelected: boolean;
 
   @Input()
   public showMenu: boolean = true;

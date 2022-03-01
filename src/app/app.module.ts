@@ -18,6 +18,7 @@ registerLocaleData(localePE, 'es_PE');
     ToolbarPageModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es_PE' }],
   bootstrap: [AppComponent],

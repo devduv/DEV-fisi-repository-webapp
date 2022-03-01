@@ -26,6 +26,9 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-error class="position-absolute" *ngIf="showErrorSchool" style="margin-top: -15px;"
+        >Debe seleccionar una Escuela Profesional</mat-error
+      >
     </div>
   </div>
 
@@ -40,11 +43,14 @@
           }}</mat-checkbox>
         </div>
       </section>
+      <mat-error class="position-absolute" *ngIf="showErrorPlan"
+        >Debe seleccionar al menos un Plan de Estudios</mat-error
+      >
     </div>
   </div>
 
   <div class="">
-    <div class="m-r-10 f-bold">Ciclo académico:</div>
+    <div class="m-r-10 f-bold">Ciclo Académico:</div>
 
     <div>
       <section class="overflow-y h-110px">
@@ -54,6 +60,9 @@
           }}</mat-checkbox>
         </div>
       </section>
+      <mat-error class="position-absolute" *ngIf="showErrorCycle"
+        >Debe seleccionar al menos un Ciclo Académico</mat-error
+      >
     </div>
   </div>
 
