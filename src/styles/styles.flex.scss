@@ -38,7 +38,7 @@
 }
 
 .overflow-x {
-    overflow-x: scroll !important;
+    overflow-x: auto !important;
 }
 
 .center-vertically {
@@ -86,4 +86,12 @@
 
 .float-right {
     float: right;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-template {
+    grid-template-columns: 10% 90%;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuOption } from 'src/app/core/models/menu.model';
+import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'app-uploader',
@@ -6,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploaderComponent implements OnInit {
 
-  constructor() { }
+  constructor( private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.menuService.goTo(MenuOption.UPLOAD);
   }
 
 }

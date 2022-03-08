@@ -1,0 +1,60 @@
+<div class="p-b-10 no-wrap overflow-x">
+    <h3 class="f-bold">Resultados</h3>
+
+    <div class="flex align-items-center">
+      <div class="m-r-10">Archivos encontrados de:</div>
+
+      <div
+        class="flex align-items-center justify-content-center m-l-10 m-r-10 bg-gray border-radius-15"
+      >
+        <div class="p-l-10 p-r-10">Escuela:</div>
+        <div class="border-left p-l-10 p-r-10 p-t-5 p-b-5">
+          <span class="f-bold">
+            {{ this.preferencesService.getPreferences().school.name }}
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="flex align-items-center justify-content-center m-l-10 m-r-10 bg-gray border-radius-15"
+      >
+        <div class="p-l-10 p-r-10">Planes:</div>
+        <div class="border-left p-l-10 p-r-10 p-t-5 p-b-5">
+          <label
+            *ngFor="
+              let plan of this.preferencesService.getPreferences().plans;
+              let i = index
+            "
+          >
+            <span class="f-bold">{{ plan.name }}</span>
+            {{
+              i == this.preferencesService.getPreferences().plans.length - 1
+                ? ""
+                : ", "
+            }}
+          </label>
+        </div>
+      </div>
+
+      <div
+        class="flex align-items-center justify-content-center m-l-10 m-r-10 bg-gray border-radius-15"
+      >
+        <div class="p-l-10 p-r-10">Ciclos:</div>
+        <div class="border-left p-l-10 p-r-10 p-t-5 p-b-5">
+          <label
+            *ngFor="
+              let cycle of this.preferencesService.getPreferences().cycles;
+              let i = index
+            "
+          >
+            <span class="f-bold">{{ cycle.name }}</span>
+            {{
+              i == this.preferencesService.getPreferences().cycles.length - 1
+                ? ""
+                : ", "
+            }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,10 +1,12 @@
-<div class="flex overflow-x">
-  <div
-    class="border-radius-15 text-align-center w-200px box-shadow-light p-10 m-10"
-    *ngFor="let course of courses"
-  >
-    <img class="w-100px" src="./assets/icons/book.png" />
+<div>
+  <div class="flex overflow-x">
+    <div
+      class="border-radius-15 text-align-center w-200px box-shadow-light p-10 m-10 bg-white cursor-pointer box-shadow-light-hover"
+      *ngFor="let course of courses"
+    >
+      <img class="w-100px" src="./assets/icons/book.png" />
 
-    <div>{{ course.name }}</div>
+      <div>{{ course.name }}</div>
+    </div>
   </div>
 </div>

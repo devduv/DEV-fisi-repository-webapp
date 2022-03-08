@@ -8,7 +8,7 @@ import { PreferencesComponent } from 'src/app/shared/preferences/preferences.com
   templateUrl: './main.page.html',
 })
 export class MainPage implements OnInit {
-  public showMenu: boolean = true;
+  public showMenu: boolean = false;
 
   constructor(
     private dialog: MatDialog,
@@ -24,9 +24,10 @@ export class MainPage implements OnInit {
   }
 
   validatePreferences() {
-    let preferences = this.preferencesService.loadLocalPreferences();
-    console.log(preferences);
-    
+    this.preferencesService.loadLocalPreferences();
+
+    let preferences = this.preferencesService.getPreferences();
+   
     if (preferences == undefined) {
       this.showPreferencesEmmitter();
     }

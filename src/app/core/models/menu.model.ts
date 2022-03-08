@@ -5,3 +5,9 @@ export interface Menu {
     icon?: string;
     selected?: boolean;
 }
+
+export enum MenuOption {
+    HOME = '/app/home',
+    SEARCH = '/app/search',
+    UPLOAD = '/app/uploader'
+}

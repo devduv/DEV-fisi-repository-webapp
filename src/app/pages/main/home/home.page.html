@@ -1,16 +1,21 @@
 <div>
-  <div class="text-align-center">
-    <h1 class="f-bold">Bienvenido <span class="fc-primary">Invitado</span></h1>
+  <div>
+    <app-search-input
+      (searchEmitter)="searchEmitter($event)"
+    ></app-search-input>
   </div>
 
-  <div>
-    <app-search-input></app-search-input>
-  </div>
-
-  <div>
+  <div class="p-b-10">
     <div>
-      <h2 class="f-bold">Cursos</h2>
-  
+      <h3 class="f-bold">Descargas Recientes</h3>
+    </div>
+
+    <app-download-list></app-download-list>
+  </div>
+
+  <div class="p-t-10">
+    <div>
+      <h3 class="f-bold">Cursos</h3>
     </div>
 
     <app-course-list></app-course-list>

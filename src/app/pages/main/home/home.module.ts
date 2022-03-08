@@ -7,6 +7,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { SearchInputModule } from 'src/app/shared/search-input/search-input.module';
 import { MatIconModule } from '@angular/material/icon';
 import { CourseListModule } from 'src/app/shared/course-list/course-list.module';
+import { DownloadListModule } from 'src/app/shared/download-list/download-list.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { CourseListModule } from 'src/app/shared/course-list/course-list.module'
     SearchInputModule,
     MatIconModule,
     CourseListModule,
+    DownloadListModule
   ],
   declarations: [HomePage],
 })

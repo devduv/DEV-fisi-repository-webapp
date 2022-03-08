@@ -6,7 +6,7 @@
     matTooltip="{{showMenu ? '' : menu.name}}"
     matTooltipPosition="right"
     *ngFor="let menu of menuList"
-    (click)="goTo(menu)"
+    (click)="goTo(menu.rout!)"
   >
     <div class="w-100percent">
       <div class="flex align-items-center">

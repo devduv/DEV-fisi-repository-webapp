@@ -1,5 +1,5 @@
 export interface Preference {
-  school?: string;
-  plans?: any[];
-  cycles?: any[];
+  school?: any;
+  plans?: any;
+  cycles?: any;
 }

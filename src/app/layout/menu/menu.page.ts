@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Menu } from 'src/app/core/models/menu.model';
+import { Menu, MenuOption } from 'src/app/core/models/menu.model';
+import { MenuService } from 'src/app/core/services/menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,55 +13,20 @@ export class MenuPage implements OnInit {
 
   public menuSelected: boolean;
 
+  public MenuOption = MenuOption;
+
   @Input()
   public showMenu: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private menuService: MenuService) {}
 
   ngOnInit() {
-    this.addMenu(this.buildMenu('1', 'Inicio', 'home', '/app/home', true));
-    this.addMenu(this.buildMenu('2', 'Buscar', 'search', '/app/search', false));
-    this.addMenu(
-      this.buildMenu(
-        '3',
-        'Subir archivos',
-        'cloud_upload',
-        '/app/uploader',
-        false
-      )
-    );
-    this.addMenu(
-      this.buildMenu('4', 'Configuración', 'settings', '/app/settings', false)
-    );
-    this.addMenu(
-      this.buildMenu('5', 'Cerrar Sesión', 'exit_to_app', '/', false)
-    );
+    this.menuList = this.menuService.build();
   }
 
-  public buildMenu(
-    id: string,
-    name: string,
-    icon: string,
-    rout: string,
-    selected: boolean
-  ) {
-    return {
-      id,
-      name,
-      icon,
-      rout,
-      selected,
-    };
-  }
+  public goTo(option: string) {
+    this.menuService.goTo(option);
 
-  public addMenu(menu: Menu) {
-    this.menuList.push(menu);
-  }
-
-  public goTo(menu: Menu) {
-    this.menuList.forEach((m) => (m.selected = false));
-    menu.selected = true;
-
-    this.router.navigate([menu.rout]);
+    this.router.navigate([option]);
   }
 }

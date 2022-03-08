@@ -95,12 +95,12 @@ export class PreferenceSearchFilesComponent implements OnInit {
     return !this.showErrorSchool && !this.showErrorPlan && !this.showErrorCycle;
   }
   save() {
-    let plans = this.planList.filter((p) => p.selected).map((p) => p.id);
+    let plans = this.planList.filter((p) => p.selected);
 
-    let cycles = this.cycleList.filter((c) => c.selected).map((c) => c.id);
+    let cycles = this.cycleList.filter((c) => c.selected);
 
     if (this.validationPreferences(plans, cycles)) {
-      let school = this.schoolSelected.id;
+      let school = this.schoolSelected;
       this.preferencesService.savePreferences(school, plans, cycles);
 
       this.dialogRef.close();

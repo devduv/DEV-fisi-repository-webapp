@@ -1,1 +1,43 @@
-<p>search works!</p>
+<div>
+  <div>
+    <app-search-input
+      [searchText]="search"
+      (searchEmitter)="searchEmitter($event)"
+    ></app-search-input>
+  </div>
+
+  <div>
+    <div>
+      <app-search-filters></app-search-filters>
+    </div>
+  </div>
+  <div class="p-b-10 flex">
+    
+    <div class="w-90percent responsive-max-width">
+      
+
+      <div>
+        <app-file-list [searchText]="search"></app-file-list>
+      </div>
+    </div>
+
+    <div class="position-relative w-200px text-align-center responsive-none">
+      <div  class="center-vertically flex align-items-center justify-content-center flex-vertical">
+        <div class="p-15 f-18">Sube archivos</div>
+        <div class="fc-gray">Agrega contenido académico como clases, exámenes o proyectos</div>
+        <mat-divider></mat-divider>
+
+        <div
+          matRipple
+          class="cursor-pointer p-15 border-circle w-150px h-150px flex align-items-center justify-content-center"
+        >
+          <mat-icon
+            class="f-70"
+            style="width: auto !important; height: auto !important"
+            >cloud_upload</mat-icon
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

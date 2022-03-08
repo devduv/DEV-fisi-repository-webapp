@@ -6,14 +6,14 @@
   </app-toolbar>
 </div>
 
-<div class="flex p-t-60 height-100vh">
+<div class="p-t-65 height-100vh">
   <div
-    class="m-15 border-radius-15 border-gray position-relative"
+    class="position-absolute width-fit-content bg-white z-index-999 height-90vh box-shadow-light "
     [ngClass]="showMenu ? 'w-200px translate-2' : 'w-56px translate'"
   >
     <app-menu [showMenu]="showMenu"></app-menu>
   </div>
-  <div class="m-15 position-relative w-100percent">
+  <div class="p-l-80 p-r-10 position-relative w-100percent">
     <router-outlet></router-outlet>
   </div>
 </div>

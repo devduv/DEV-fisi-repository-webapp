@@ -1,23 +1,41 @@
-<div class="flex align-items-center">
-  <div class="p-8 border-radius-15 flex align-items-center justify-content-center bg-gray m-r-10">
-    <mat-icon>search</mat-icon>
-  </div>
+<div
+  class="flex align-items-center bg-gray m-t-10 m-b-10 box-shadow-light-focus"
+>
+<div class="p-10">
+  Buscar
+</div>
   <mat-form-field
     class="w-100percent f-20"
     appearance="legacy"
     floatLabel="never"
   >
-    <mat-label>Buscar archivos, proyectos, exámenes...</mat-label>
-    <input matInput type="text" [(ngModel)]="value" />
+    <input
+      matInput
+      type="text"
+      name="search"
+      id="search"
+      autofill="off"
+      autoComplete="off"
+      [(ngModel)]="searchText"
+    />
 
     <button
-      *ngIf="value"
+   
+      *ngIf="searchText"
       matSuffix
       mat-icon-button
       aria-label="Clear"
-      (click)="value = ''"
+      (click)="searchText = ''"
     >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+
+  <div
+  matRipple
+    class="border-left cursor-pointer p-10 flex align-items-center justify-content-center"
+    (click)="search()"
+  >
+    <mat-icon>search</mat-icon>
+  </div>
 </div>
