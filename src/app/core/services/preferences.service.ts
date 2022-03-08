@@ -6,7 +6,7 @@ import { Preference } from '../models/preferences.model';
   providedIn: 'root',
 })
 export class PreferencesService {
-  preferences: Preference = {};
+  preferences: Preference;
 
   constructor(private http: HttpClient) {
     this.loadLocalPreferences();
@@ -28,6 +28,7 @@ export class PreferencesService {
     let school = localStorage.getItem('preferences-school');
     let plans = localStorage.getItem('preferences-plans');
     let cycles = localStorage.getItem('preferences-cycles');
+    
     if (school != null && plans != null && cycles != null) {
       this.preferences = {
         school: JSON.parse(school),

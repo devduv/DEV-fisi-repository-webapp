@@ -1,7 +1,7 @@
 <div class="p-b-10 no-wrap overflow-x">
     <h3 class="f-bold">Resultados</h3>
 
-    <div class="flex align-items-center">
+    <div class="flex align-items-center" *ngIf="this.preferencesService.getPreferences() != null">
       <div class="m-r-10">Archivos encontrados de:</div>
 
       <div
@@ -10,7 +10,7 @@
         <div class="p-l-10 p-r-10">Escuela:</div>
         <div class="border-left p-l-10 p-r-10 p-t-5 p-b-5">
           <span class="f-bold">
-            {{ this.preferencesService.getPreferences().school.name }}
+            {{ this.preferencesService.getPreferences()?.school.name }}
           </span>
         </div>
       </div>
@@ -22,13 +22,13 @@
         <div class="border-left p-l-10 p-r-10 p-t-5 p-b-5">
           <label
             *ngFor="
-              let plan of this.preferencesService.getPreferences().plans;
+              let plan of this.preferencesService.getPreferences()?.plans;
               let i = index
             "
           >
             <span class="f-bold">{{ plan.name }}</span>
             {{
-              i == this.preferencesService.getPreferences().plans.length - 1
+              i == this.preferencesService.getPreferences()?.plans.length - 1
                 ? ""
                 : ", "
             }}
