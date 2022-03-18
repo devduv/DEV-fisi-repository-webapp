@@ -23,9 +23,9 @@ export class FileListComponent implements OnInit {
     //this.files = this.filesService.getFiles(this.searchText);
     this.filesService.getFiles().then((data)=>{
       this.files = data
-      console.log(data)
+      console.log('data: ',data)
     }).catch(e=>{
-      console.log(e)
+      console.log('error: ',e)
     })
   }
 }

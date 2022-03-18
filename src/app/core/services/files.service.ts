@@ -43,6 +43,6 @@ export class FilesService {
     return this.http
       .get<any>(`${environment.API_REPOSITORY}/files`)
       .toPromise()
-      .then((plans) => plans.data.map((p: any) => p));
+      .then((files) => files.data.map((p: any) => p));
   }
 }
