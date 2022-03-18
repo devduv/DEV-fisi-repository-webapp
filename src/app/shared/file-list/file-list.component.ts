@@ -20,6 +20,12 @@ export class FileListComponent implements OnInit {
   }
 
   getFiles() {
-    this.files = this.filesService.getFiles(this.searchText);
+    //this.files = this.filesService.getFiles(this.searchText);
+    this.filesService.getFiles().then((data)=>{
+      this.files = data
+      console.log(data)
+    }).catch(e=>{
+      console.log(e)
+    })
   }
 }

@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class FilesService {
   constructor(private http: HttpClient) {}
-
+/*
   getFiles(search: string) {
     return [
       {
@@ -37,5 +37,12 @@ export class FilesService {
         file_type: 'Prácticas',
       },
     ];
+  }
+*/
+  public getFiles() {
+    return this.http
+      .get<any>(`${environment.API_REPOSITORY}/files`)
+      .toPromise()
+      .then((plans) => plans.data.map((p: any) => p));
   }
 }
