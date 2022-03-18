@@ -35,7 +35,7 @@ export class MainPage implements OnInit {
 
   showPreferencesEmmitter() {
     const dialogRef = this.dialog.open(PreferencesComponent, {
-      disableClose: true,
+      disableClose: this.preferencesService.getPreferences() == undefined,
     });
     dialogRef.afterClosed().subscribe((result) => {});
   }

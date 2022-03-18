@@ -15,18 +15,27 @@
 
     <div>
       <mat-form-field
+        *ngIf="!loading"
         class="w-100percent"
         appearance="legacy"
         floatLabel="never"
       >
         <mat-label>Seleccionar EAP</mat-label>
-        <mat-select (selectionChange)="changeSchool($event.value)">
+        <mat-select
+          (selectionChange)="changeSchool($event.value)"
+          [(ngModel)]="schoolSelected"
+          name="school"
+        >
           <mat-option *ngFor="let school of schoolList" [value]="school">
             {{ school.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-error class="position-absolute" *ngIf="showErrorSchool" style="margin-top: -15px;"
+      <div *ngIf="loading">Cargando...</div>
+      <mat-error
+        class="position-absolute"
+        *ngIf="showErrorSchool"
+        style="margin-top: -15px"
         >Debe seleccionar una Escuela Profesional</mat-error
       >
     </div>
@@ -36,13 +45,16 @@
     <div class="f-bold">Plan de Estudios:</div>
 
     <div>
-      <section>
+      <section *ngIf="!loading">
         <div *ngFor="let plan of planList">
-          <mat-checkbox (change)="changePlan(plan, $event.checked)">{{
-            plan.name
-          }}</mat-checkbox>
+          <mat-checkbox
+            (change)="changePlan(plan, $event.checked)"
+            [checked]="plan.selected"
+            >{{ plan.name }}</mat-checkbox
+          >
         </div>
       </section>
+      <div *ngIf="loading">Cargando...</div>
       <mat-error class="position-absolute" *ngIf="showErrorPlan"
         >Debe seleccionar al menos un Plan de Estudios</mat-error
       >
@@ -53,13 +65,16 @@
     <div class="m-r-10 f-bold">Ciclo Académico:</div>
 
     <div>
-      <section class="overflow-y h-110px">
+      <section class="overflow-y h-110px" *ngIf="!loading">
         <div *ngFor="let cycle of cycleList">
-          <mat-checkbox (change)="changeCycle(cycle, $event.checked)">{{
-            cycle.name
-          }}</mat-checkbox>
+          <mat-checkbox
+            (change)="changeCycle(cycle, $event.checked)"
+            [checked]="cycle.selected"
+            >{{ cycle.name }}</mat-checkbox
+          >
         </div>
       </section>
+      <div *ngIf="loading">Cargando...</div>
       <mat-error class="position-absolute" *ngIf="showErrorCycle"
         >Debe seleccionar al menos un Ciclo Académico</mat-error
       >

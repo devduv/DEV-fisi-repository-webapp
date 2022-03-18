@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { PreferencesService } from 'src/app/core/services/preferences.service';
+import { SchoolsService } from 'src/app/core/services/schools.service';
 import { StudyPlansService } from 'src/app/core/services/study-plans.service';
 
 @Component({
@@ -16,37 +17,59 @@ export class PreferenceSearchFilesComponent implements OnInit {
 
   schoolSelected: any;
 
+  loading: boolean = true;
+
   public showErrorSchool: boolean;
   public showErrorPlan: boolean;
   public showErrorCycle: boolean;
 
   constructor(
     public dialogRef: MatDialogRef<PreferenceSearchFilesComponent>,
+    private schoolsService: SchoolsService,
     private studyPlansService: StudyPlansService,
     private preferencesService: PreferencesService
   ) {}
 
-  ngOnInit(): void {
-    this.buildSchoolList();
-    this.buildPlanList();
+  async ngOnInit() {
+    await this.getSchoolList();
+    await this.getPlanList();
     this.buildCycleList();
+    this.loadLocalPreferences();
   }
 
-  buildSchoolList() {
-    this.schoolList.push(
-      { id: '01', name: 'EP Ingeniería de Sistemas' },
-      { id: '02', name: 'EP Ingeniería de Software' }
-    );
+  async getSchoolList() {
+    this.schoolList = await this.schoolsService.getSchools();
   }
 
-  async buildPlanList() {
+  async getPlanList() {
     this.planList = await this.studyPlansService.getPlansBySchool();
-    console.log(this.planList);
-    
-    /* this.planList.push(
-      { id: '01', name: 'Plan 2014', selected: false },
-      { id: '02', name: 'Plan 2018', selected: false }
-    ); */
+    this.loading = false;
+  }
+
+  loadLocalPreferences() {
+    this.preferencesService.loadLocalPreferences();
+    let preferences = this.preferencesService.getPreferences();
+    if (preferences !== undefined) {
+      this.schoolSelected = this.schoolList.find(
+        (s) => s.id == preferences.school.id
+      );
+
+      this.planList.forEach((p) => {
+        preferences.plans?.forEach((q: any) => {
+          if (q.id == p.id) {
+            p.selected = true;
+          }
+        });
+      });
+
+      this.cycleList.forEach((p) => {
+        preferences.cycles?.forEach((q: any) => {
+          if (q.id == p.id) {
+            p.selected = true;
+          }
+        });
+      });
+    }
   }
 
   buildCycleList() {

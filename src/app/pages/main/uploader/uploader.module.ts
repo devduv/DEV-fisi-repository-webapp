@@ -2,18 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UploaderComponent } from './uploader.component';
 import { UploaderRoutingModule } from './uploader-routing.module';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
+
+import { FormUploaderModule } from 'src/app/shared/form-uploader/form-uploader.module';
 
 @NgModule({
   declarations: [UploaderComponent],
   imports: [
     CommonModule,
     UploaderRoutingModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule
+    FormUploaderModule
   ],
 })
 export class UploaderModule {}

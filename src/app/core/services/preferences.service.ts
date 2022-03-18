@@ -21,7 +21,7 @@ export class PreferencesService {
       school: school,
       plans: plans,
       cycles: cycles,
-    };
+    };    
   }
 
   public loadLocalPreferences() {
