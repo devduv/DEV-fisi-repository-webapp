@@ -1,0 +1,85 @@
+
+<div class="grid grid-template-30-70 grid-template-responsive">
+    <div style="width: 100%;">
+        <img src="https://images.pexels.com/photos/11293709/pexels-photo-11293709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="object-fit: cover; width:14rem; height: 14rem; border-radius: 50%;">
+    </div>
+    <div>
+    
+        <div style="padding-bottom: 2rem;">
+            <h3 class="f-bold">Información Personal</h3>
+            <mat-list>
+            <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                <mat-list-item>
+                    <mat-icon mat-list-icon>person</mat-icon>
+                    <div mat-line>NOMBRES</div>
+                </mat-list-item>
+                <mat-list-item class="text-center-responsive">
+                    <div mat-line>{{student?.names}} {{student?.secondLastName}}</div>
+                </mat-list-item>
+            </div>
+            <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                <mat-list-item>
+                    <mat-icon mat-list-icon>person_outline</mat-icon>
+                    <div mat-line>APELLIDOS</div>
+                </mat-list-item>
+                <mat-list-item class="text-center-responsive">
+                    <div mat-line>{{student?.lastName}}</div>
+                </mat-list-item>
+            </div>
+            <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                <mat-list-item>
+                    <mat-icon mat-list-icon>record_voice_over</mat-icon>
+                    <div mat-line>USUARIO</div>
+                </mat-list-item>
+                <mat-list-item class="text-center-responsive">
+                    <div mat-line>Pucho007</div>
+                </mat-list-item>
+            </div>
+            <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                <mat-list-item>
+                    <mat-icon mat-list-icon>email</mat-icon>
+                    <div mat-line>EMAIL</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <div mat-line>{{student?.email}}</div>
+                </mat-list-item>
+            </div>
+            </mat-list>
+        </div>
+    
+        <div>
+            <h3 class="f-bold">Información Académica</h3>
+            <mat-list>
+                <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>integration_instructions</mat-icon>
+                        <div mat-line>CICLO</div>
+                    </mat-list-item>
+                    <mat-list-item class="text-center-responsive">
+                        <div mat-line>10</div>
+                    </mat-list-item>
+                </div>
+                    <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>inventory</mat-icon>
+                        <div mat-line>PLAN</div>
+                    </mat-list-item>
+                    <mat-list-item class="text-center-responsive">
+                        <div mat-line>2014</div>
+                    </mat-list-item>
+                </div>
+                    <div class="f-direction-column-responsive" style="display: flex; justify-content: space-between; align-items: center;">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>local_library</mat-icon>
+                        <div mat-line>CARRERA</div>
+                    </mat-list-item>
+                    <mat-list-item class="text-center-responsive">
+                        <div mat-line>Ingenieria de Sistemas</div>
+                    </mat-list-item>
+                </div>
+            </mat-list>
+        </div>
+    
+    </div>
+    </div>
+    

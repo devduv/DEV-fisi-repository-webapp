@@ -1,0 +1,166 @@
+
+<form (ngSubmit)="saveStudent()" autocomplete="off" [formGroup]="miFormulario">
+    <div style="padding-bottom: 2rem;">
+        <h3 class="f-bold">Información Personal</h3>
+            <mat-list>
+                <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>person</mat-icon>
+                        <div>NOMBRES</div>
+                    </mat-list-item>
+                    <div class="flex align-items-center f-wrap w-100percent">
+                        <mat-form-field class="w-100percent" appearance="legacy">
+                            <input matInput 
+                            autocomplete="off"
+                            class="w-100percent border-primary border-radius-10 p-10" 
+                            type="text" 
+                            formControlName="names"
+                            [ngClass]="{'border-error-item':checkValidForm('names') }"
+                            name="names"/>
+                            <mat-error *ngIf="checkValidForm('names')">
+                                El nombre es <strong>necesario</strong>
+                              </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>person_outline</mat-icon>
+                        <div>APELLIDOS</div>
+                    </mat-list-item>
+                    <div class="flex align-items-center f-wrap w-100percent">
+                        <mat-form-field class="w-100percent" appearance="legacy">
+                            <input matInput 
+                            autocomplete="off"
+                            class="w-100percent border-primary border-radius-10 p-10" 
+                            type="text" 
+                            formControlName="lastName"
+                            [ngClass]="{'border-error-item':checkValidForm('lastName') }"
+                            name="lastName"/>
+                            <mat-error *ngIf="checkValidForm('lastName')">
+                                El apellido es <strong>necesario</strong>
+                              </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>record_voice_over</mat-icon>
+                        <div>USUARIO</div>
+                    </mat-list-item>
+                    <div class="flex align-items-center f-wrap w-100percent">
+                        <mat-form-field class="w-100percent" appearance="legacy">
+                            <input matInput 
+                            autocomplete="off"
+                            class="w-100percent border-primary border-radius-10 p-10" 
+                            type="text" 
+                            formControlName="usuario"
+                            [ngClass]="{'border-error-item':checkValidForm('usuario') }"
+                            name="usuario"/>
+                            <mat-error *ngIf="checkValidForm('usuario')">
+                                El usuario es <strong>necesario</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>email</mat-icon>
+                        <div>EMAIL</div>
+                    </mat-list-item>
+                    <div class="flex align-items-center f-wrap w-100percent">
+                        <mat-form-field class="w-100percent" appearance="legacy">
+                            <input matInput 
+                            autocomplete="off"
+                            class="w-100percent border-primary border-radius-10 p-10" 
+                            type="email" 
+                            formControlName="email"
+                            [ngClass]="{'border-error-item':checkValidForm('email') }"
+                            name="email"/>
+                            <mat-error *ngIf="checkValidForm('email')">
+                                El email es <strong>no valido</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-list>
+    </div>
+
+    <div style="padding-bottom: 2rem;">
+        <h3 class="f-bold">Información Personal</h3>
+        <mat-list>
+        <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+            <mat-list-item>
+                <mat-icon mat-list-icon>integration_instructions</mat-icon>
+                <div>CICLO</div>
+            </mat-list-item>
+            <div class="flex align-items-center f-wrap w-100percent">
+                <mat-form-field class="w-100percent" appearance="legacy">
+                    <mat-select 
+                    formControlName="ciclo"
+                    name="ciclo"
+                    >
+                      <mat-option value="1">1</mat-option>
+                      <mat-option value="2">2</mat-option>
+                      <mat-option value="3">3</mat-option>
+                      <mat-option value="4">4</mat-option>
+                      <mat-option value="5">5</mat-option>
+                      <mat-option value="6">6</mat-option>
+                      <mat-option value="7">7</mat-option>
+                      <mat-option value="8">8</mat-option>
+                      <mat-option value="9">9</mat-option>
+                      <mat-option value="10">10</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="checkValidForm('ciclo')">
+                        El ciclo es <strong>necesario</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+            <mat-list-item>
+                <mat-icon mat-list-icon>inventory</mat-icon>
+                <div>PLAN</div>
+            </mat-list-item>
+            <div class="flex align-items-center f-wrap w-100percent">
+                <mat-form-field class="w-100percent" appearance="legacy">
+                    <mat-select 
+                    formControlName="plan"
+                    name="plan"
+                    >
+                      <mat-option value="2014">2014</mat-option>
+                      <mat-option value="2018">2018</mat-option>
+                      <mat-option value="2022">2022</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="checkValidForm('plan')">
+                        El plan es <strong>necesario</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex justify-content-space-between align-items-center m-b-5 f-direction-column-responsive">
+            <mat-list-item>
+                <mat-icon mat-list-icon>local_library</mat-icon>
+                <div>ESCUELA</div>
+            </mat-list-item>
+            <div class="flex align-items-center f-wrap w-100percent">
+                <mat-form-field class="w-100percent" appearance="legacy">
+                    <mat-select 
+                    formControlName="escuela"
+                    name="escuela"
+                    >
+                      <mat-option value="Sistemas">EAP SISTEMAS</mat-option>
+                      <mat-option value="Software">EAP SOFTWARE</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="checkValidForm('plan')">
+                        La EAP es <strong>necesaria</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        </mat-list>
+    </div>
+
+    <button class="w-100percent" mat-raised-button color="primary" [disabled]="miFormulario.invalid">Actulizar Datos</button>
+
+</form>

@@ -9,5 +9,6 @@ export interface Menu {
 export enum MenuOption {
     HOME = '/app/home',
     SEARCH = '/app/search',
-    UPLOAD = '/app/uploader'
+    UPLOAD = '/app/uploader',
+    SETTINGS ='/app/settings'
 }

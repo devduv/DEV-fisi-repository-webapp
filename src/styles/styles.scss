@@ -74,6 +74,18 @@ body {
   background-color: #f7f7f7;
 }
 
+.bg-blue-hover:hover{
+  color:#333c87;
+}
+
+.active-item{
+  color:#333c87 !important;
+}
+
+.error-item{
+  color: $quarter__color;
+}
+
 .box-shadow {
   box-shadow: 2px 3px 20px 1px rgb(0 0 0 / 75%);
   transition: 0.3s;
@@ -123,3 +135,5 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;  
 }
+
+

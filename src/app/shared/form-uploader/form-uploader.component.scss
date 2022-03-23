@@ -1,15 +1,15 @@
-::ng-deep .mat-form-field-infix {
+:host ::ng-deep .mat-form-field-infix {
     border-top: 0;
 }
 
-::ng-deep .mat-form-field.mat-focused .mat-form-field-underline {
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-underline {
     display: none;
 }
-::ng-deep .mat-form-field-underline {
+:host ::ng-deep .mat-form-field-underline {
     opacity: 0;
 }
 
-::ng-deep {
+:host ::ng-deep {
     .mat-form-field-appearance-legacy .mat-form-field-infix {
         padding: 10px 5px;
         border-left: 1px solid rgb(226, 226, 226);

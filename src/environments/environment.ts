@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   API_REPOSITORY: 'https://universitory-backend.herokuapp.com/api/v1',
+  API_REPOSITORY_2: 'https://universitory-backend.herokuapp.com'
 };
 
 /*
